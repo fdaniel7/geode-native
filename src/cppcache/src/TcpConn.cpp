@@ -268,7 +268,6 @@ void TcpConn::connect() {
     }
     ACE_OS::snprintf(msg, 256, "TcpConn::connect failed with errno: %d: %s",
                      lastError, ACE_OS::strerror(lastError));
-    //  this is only called by constructor, so we must delete m_io
 	close();
     throw GeodeIOException(msg);
   }
